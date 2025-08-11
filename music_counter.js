@@ -9,7 +9,6 @@ rectMode(CENTER);
 textAlign(CENTER);
 textFont('Luminari '); // please use CSS safe fonts
 
-//Hellooooooo
 
 if (words == "") {
   wordBrightness = int(wordBrightness * 0.95); //fade brightness 
