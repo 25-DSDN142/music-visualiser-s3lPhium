@@ -12,24 +12,75 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   //Maps
   //let mapName = map(Variable, oldMin, oldMax, newMin, newMax)
 
+  
+
   let sizeMap = map(bass, 0, 100, 200, 300);
+
+  //Top left gold drum
+  drumLegs(400, 120); //top left drum leg
+
+  //Top right gold drum
+  drumLegs(800, 120); //top left drum leg
+
+  //Bottom left gold drum
+  drumLegs(345, 415); //top left drum leg
+
+  //Bottom right gold drum
+  drumLegs(830, 415); //top left drum leg
+  
+
+
+  
+
 
   //base plates
   noStroke();
   fill(231, 175, 64);
   ellipse(midX - 150, midY - 100, sizeMap); // top left
+  ellipse(midX + 250, midY - 100, sizeMap); // top right
   fill(231, 175, 64);
   ellipse(midX - 200, midY + 150, (sizeMap) * 0.9); // bottom left 
+  ellipse(midX + 300, midY + 150, (sizeMap) * 0.9); // bottom right 
   
 
+  orangePlateTopLeft(midX, midY, sizeMap);
   orangePlateBottomLeft(midX, midY, sizeMap);
-  orangePlateTopLeft(midX, midY, sizeMap); 
-  drumLegs(400, 350);
+
+  orangePlateTopLeft(midX + 400, midY, sizeMap);
+  orangePlateBottomLeft(midX + 500, midY, sizeMap);
+   
+
+  
 
    textAlign(CENTER);
    textSize(vocal);
    strokeWeight(2)
    text(words, canvasWidth/2, canvasHeight/6);
+
+
+}
+
+function drumLegs(x, y) {
+
+  fill("black")
+  rect(x - 25 , y - 35, 30, 30);
+  noStroke();
+
+  fill("grey")
+  rect(x - 20 , y - 30, 20, 20);
+  noStroke();
+  
+  stroke("black");
+  noFill()
+  strokeWeight(15);
+  
+  line(x + 30, y + 60, x - 10, y - 20);
+  strokeWeight(2);
+  
+  
+
+
+}
 
 
 function orangePlateTopLeft(midX, midY, sizeMap) {
@@ -44,7 +95,7 @@ function orangePlateTopLeft(midX, midY, sizeMap) {
   }
 
 
-  //little black circle
+  // black circle
   fill("black");
   noStroke();
   ellipse(midX - 150, midY - 100, 15);
@@ -54,11 +105,11 @@ function orangePlateTopLeft(midX, midY, sizeMap) {
   strokeWeight(2);
 
   stroke("white");
-  line(midX - 150, midY - 110, midX - 150, midY - 90); //vertical
+  //line(midX - 150, midY - 110, midX - 150, midY - 90); //vertical (I like it with just one line but ill keep it there anyways)
   line(midX - 160, midY - 100, midX - 140, midY - 100); // horisontal
 
-  //tiny grey circle
-  fill("grey");
+  //tiny white circle
+  fill("white");
   noStroke();
   ellipse(midX - 150, midY - 100, 5);
 
@@ -83,39 +134,16 @@ function orangePlateBottomLeft(midX, midY, sizeMap) {
   noFill();
   strokeWeight(2);
   stroke("white");
-  line(midX - 200, midY + 160, midX - 200, midY + 140);
-  line(midX - 210, midY + 150, midX - 190, midY + 150);
+  line(midX - 200, midY + 160, midX - 200, midY + 140); 
+  //line(midX - 210, midY + 150, midX - 190, midY + 150);
 
-  //tiny grey circle
-  fill("grey");
+  //tiny white circle
+  fill("white");
   noStroke();
   ellipse(midX - 200, midY + 150, 5);
 
 }
 
-function drumLegs(x, y) {
-
-  fill("black")
-  rect(x , y - 10, 20, 20);
-  noStroke();
-
-  fill("grey")
-  rect(x , y - 10, 20, 20);
-  noStroke();
-  
-  stroke("black");
-  noFill()
-  strokeWeight(15);
-  
-  line(x + 10, y, x + 20, y + 50);
-  
-  
-  
-
-
-}
-
-}
 
 
 
