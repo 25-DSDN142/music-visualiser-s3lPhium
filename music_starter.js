@@ -11,7 +11,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   //Maps
   //let mapName = map(Variable, oldMin, oldMax, newMin, newMax)
-
+  //Updated
   
 
   let goldPlateSize = map(bass, 0, 100, 220, 250);
